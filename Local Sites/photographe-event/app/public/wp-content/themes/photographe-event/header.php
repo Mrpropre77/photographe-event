@@ -1,59 +1,48 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package photographe_event
- */
-
-?>
-<!doctype html>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'photographe-event' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$photographe_event_description = get_bloginfo( 'description', 'display' );
-			if ( $photographe_event_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $photographe_event_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'photographe-event' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+    <?php wp_body_open(); ?>
+    <main class="main">
+        <!-- Menu Desktop -->
+        <header class="header_desktop">
+            <!-- Logo home page -->
+            <a href="<?php echo home_url('/'); ?>" class="header_logo_link">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" class="header_logo_img"
+                    alt="Logo">
+            </a>
+            <?php
+            wp_nav_menu(
+                array(
+                    'theme_location' => 'main',
+                    'container' => 'ul',
+                    'menu_class' => 'header__menu__desktop',
+                )
+            );
+            ?>
+            <div class="btn_menu">
+                <div class="line"></div>
+            </div>
+        </header>
+        <!-- Menu Mobile -->
+        <header class="header_mobile">
+            <div class="header_mobile_container">
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'main',
+                        'container' => 'ul',
+                        'menu_class' => 'header__menu__mobile',
+                    )
+                );
+                ?>
+            </div>
+        </header>
