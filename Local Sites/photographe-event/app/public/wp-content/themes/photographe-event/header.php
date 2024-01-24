@@ -12,11 +12,11 @@
 
     <?php wp_body_open(); ?>
     <main class="main">
-        <!-- Menu Desktop -->
         <header class="header_desktop">
-            <!-- Logo home page -->
+            <!-- Main menu -->
+            <!-- Logo Accueil -->
             <a href="<?php echo home_url('/'); ?>" class="header_logo_link">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" class="header_logo_img"
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo.png" class="header_logo_img"
                     alt="Logo">
             </a>
             <?php

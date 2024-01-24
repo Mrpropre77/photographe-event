@@ -11,6 +11,139 @@ Text Domain:  Photographe Event
 */
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 .main {
   max-width: 100%;
   margin: 0 auto;
@@ -226,6 +359,64 @@ Text Domain:  Photographe Event
     opacity: 1;
   }
 }
+.photo_block_overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  transition: 300ms;
+}
+.photo_block_overlay .icon_eye {
+  width: 46px;
+  height: 32px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.photo_block_overlay .icon_eye a {
+  width: 100%;
+  height: 100%;
+}
+.photo_block_overlay .icon_eye a img {
+  width: 100%;
+  margin: 0;
+}
+.photo_block_overlay .icon_fullscreen {
+  height: 35px;
+  width: auto;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.photo_block_overlay .text_category,
+.photo_block_overlay .text_reference {
+  width: auto;
+  font-size: 14px;
+  font-family: "Space Mono", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  position: absolute;
+}
+.photo_block_overlay .text_reference {
+  bottom: 20px;
+  left: 20px;
+}
+.photo_block_overlay .text_category {
+  bottom: 20px;
+  right: 20px;
+}
+
+.photo_block:hover .photo_block_overlay {
+  transform: scale(1);
+}
+
 #footer_menu {
   display: flex;
   justify-content: center;
@@ -273,4 +464,156 @@ Text Domain:  Photographe Event
     margin-top: 30px;
     margin-bottom: 20px;
   }
+}
+
+.popup_modale {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3764705882);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+.popup_modale.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+.popup_modale .popup_container {
+  background: white;
+  border: 5px solid #000;
+  border-radius: 2px;
+  max-width: 600px;
+  height: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+.popup_modale .popup_container.is-display {
+  animation-name: scaleIn;
+  animation-duration: 1000ms;
+  animation-timing-function: ease-in-out;
+}
+@media screen and (max-width: 425px) {
+  .popup_modale .popup_container {
+    max-width: 90%;
+  }
+}
+.popup_modale .popup_container .popup_header_img {
+  width: 145%;
+  height: 105%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  transform: translateX(-15%);
+}
+.popup_modale .popup_container .popup_header_img img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@keyframes scaleIn {
+  from {
+    scale: 0;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+.wpcf7-form {
+  width: 500px;
+  height: 600px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 425px) {
+  .wpcf7-form {
+    max-width: 100%;
+  }
+}
+.wpcf7-form label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  font-family: "Poppins", sans-serif;
+}
+.wpcf7-form .form_group {
+  width: 263px;
+  height: 63px;
+  margin: 0 auto 50px auto;
+}
+@media screen and (max-width: 425px) {
+  .wpcf7-form .form_group {
+    max-width: 100%;
+  }
+}
+.wpcf7-form .form_group input {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid #b8bbc2;
+}
+@media screen and (max-width: 320px) {
+  .wpcf7-form .form_group input {
+    max-width: 97%;
+  }
+}
+.wpcf7-form .form_reference span input {
+  text-transform: uppercase;
+  font-size: 22px;
+}
+.wpcf7-form .form_textarea {
+  width: 260px;
+  margin: 30px auto 20px auto;
+}
+@media screen and (max-width: 425px) {
+  .wpcf7-form .form_textarea {
+    max-width: 100%;
+  }
+}
+.wpcf7-form .form_textarea textarea {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #b8bbc2;
+}
+@media screen and (max-width: 320px) {
+  .wpcf7-form .form_textarea textarea {
+    max-width: 97%;
+  }
+}
+.wpcf7-form .form_submit {
+  width: 260px;
+  margin: auto;
+}
+@media screen and (max-width: 425px) {
+  .wpcf7-form .form_submit {
+    max-width: 100%;
+  }
+}
+.wpcf7-form .form_submit input[type=submit] {
+  width: 100%;
+  height: 50px;
+  background-color: #d8d8d8;
+  border: 1px solid #b8bbc2;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: space mono;
+  font-weight: 400;
+}
+.wpcf7-form .form_submit input[type=submit]:hover {
+  color: #fff;
+  background-color: #000;
+  transition: background-color 300ms ease-in-out;
+}
+.wpcf7-form .wpcf7-response-output {
+  margin: 0 auto !important;
 }/*# sourceMappingURL=style.css.map */

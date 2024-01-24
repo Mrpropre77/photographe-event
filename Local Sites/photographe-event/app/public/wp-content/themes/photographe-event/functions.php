@@ -11,19 +11,20 @@ function child_enqueue_script()
 }
 add_action('wp_enqueue_scripts', 'child_enqueue_script');
 
-// Ajouter 2 emplacements de menus
+// Ajout des 2 menus
 register_nav_menus(array(
     'main' => 'Menu Principal',
     'footer' => 'Bas de page',
 ));
 
-// change HEADER menu CONTACT Link
+// changement du HEADER et du menu CONTACT 
 add_filter('wp_nav_menu_items', 'add_header_link', 10, 2);
 function add_header_link($items, $args)
 {
     if ($args->theme_location === 'main') {
         $new_item       = array('<li class="menu-item menu-item-23"><a href="#">CONTACT</a></li>');
         $items          = preg_replace('/<\/li>\s<li/', '</li>,<li',  $items);
+
 
         $array_items    = explode(
             ',',
@@ -41,8 +42,13 @@ function add_header_link($items, $args)
 // Ajouter la prise en charge des images mises en avant
 add_theme_support('post-thumbnails');
 
-// Ajouter automatiquement le titre du site dans l'en-tête du site
+// Ajouter automatiquement le titre du site dans le header
 add_theme_support('title-tag');
 
-
 //
+require_once get_template_directory() . '/inc/load_jquery_function.php';
+require_once get_template_directory() . '/inc/load_ajax_function.php';
+require_once get_template_directory() . '/inc/load_all_posts_function.php';
+require_once get_template_directory() . '/inc/load_more_posts_function.php';
+require_once get_template_directory() . '/inc/filtered_function.php';
+require_once get_template_directory() . '/inc/reference_contact_function.php';
