@@ -6,14 +6,14 @@
         <div class="text_reference"><?php the_field('reference'); ?></div>
         <div class="icon_eye">
             <a href="<?php echo $post_url; ?>" class="lightbox_trigger">
-                <img src="<?php echo get_template_directory_uri() . '/assets/img/icon-eye.svg' ?>">
+                <img src="<?php echo get_template_directory_uri() . '/assets/images/icon-eye.svg' ?>">
             </a>
         </div>
         <div class="icon_fullscreen" data-title="<?php the_title(); ?>"
             data-image="<?php echo esc_attr(get_the_post_thumbnail_url(get_the_ID())); ?>"
             data-reference="<?php the_field('reference'); ?>" data-categorie="<?php the_field('categories') ?>">
             <img src="
-                    <?php echo get_template_directory_uri() . '/assets/img/Icon_fullscreen.png' ?>">
+                    <?php echo get_template_directory_uri() . '/assets/images/Icon_fullscreen.png' ?>">
         </div>
     </div>
     <!-- Template Part post Img -->

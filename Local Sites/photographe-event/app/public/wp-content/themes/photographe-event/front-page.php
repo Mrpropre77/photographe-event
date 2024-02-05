@@ -33,11 +33,11 @@
             <?php endwhile;
             wp_reset_postdata() ?>
         </section><!-- section_photo_block_container -->
-        <!--<div class="div_btn_load_more">
+        <div class="div_btn_load_more">
             <div class="btn_load_more">
                 <span id="loadMoreBtn">Charger Plus</span>
             </div>
-        </div> -->
+        </div>
 
 <?php endwhile;
 endif; ?>
