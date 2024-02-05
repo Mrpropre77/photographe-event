@@ -3,7 +3,7 @@
 Theme Name:   Photographe Event
 Theme URI:    https://photographe-event.fr
 Author:       Nathalie Mota
-Author URI:   https://nas-mrpropre.fr
+Author URI:   https://openclassrooms.fr
 Description:  Thème personnalisé Photographe Event
 Version:      1.0
 Tags:         photographe, évenement, mariage
@@ -93,7 +93,6 @@ mark,
 audio,
 video {
   box-sizing: border-box;
-  margin: 0;
   padding: 0;
   border: 0;
   font-size: 100%;
@@ -144,12 +143,12 @@ table {
   border-spacing: 0;
 }
 
-.main {
+body {
   max-width: 100%;
   margin: 0 auto;
   font-family: "Space Mono", monospace;
 }
-.main .header_desktop {
+body .header_desktop {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -158,73 +157,73 @@ table {
   background-color: #fff;
   position: relative;
   box-shadow: 0px 4px 14px 10px rgba(0, 0, 0, 0.031372549);
-  /* Btn Menu Burger  */
-  /* Animation Btn Menu Burger */
+  /* Button Menu Burger  */
+  /* Animation Button Menu Burger */
 }
 @media screen and (max-width: 768px) {
-  .main .header_desktop {
+  body .header_desktop {
     justify-content: space-between;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.0901960784);
   }
 }
-.main .header_desktop .header_logo_link {
+body .header_desktop .header_logo_link {
   width: 250px;
 }
 @media screen and (max-width: 768px) {
-  .main .header_desktop .header_logo_link {
+  body .header_desktop .header_logo_link {
     position: absolute;
     width: 250px;
   }
 }
-.main .header_desktop .header_logo_link .header_logo_img {
+body .header_desktop .header_logo_link .header_logo_img {
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  .main .header_desktop .header_logo_link .header_logo_img {
+  body .header_desktop .header_logo_link .header_logo_img {
     position: absolute;
     left: 5%;
     transform: translate(20%, -50%);
   }
 }
 @media screen and (max-width: 425px) {
-  .main .header_desktop .header_logo_link .header_logo_img {
+  body .header_desktop .header_logo_link .header_logo_img {
     left: 0;
     transform: translate(10%, -50%);
   }
 }
 @media screen and (max-width: 375px) {
-  .main .header_desktop .header_logo_link .header_logo_img {
+  body .header_desktop .header_logo_link .header_logo_img {
     left: 0;
     transform: translate(5%, -50%);
   }
 }
 @media screen and (max-width: 325px) {
-  .main .header_desktop .header_logo_link .header_logo_img {
+  body .header_desktop .header_logo_link .header_logo_img {
     width: 235px;
   }
 }
-.main .header_desktop .header__menu__desktop {
+body .header_desktop .header__menu__desktop {
   display: flex;
   justify-content: space-around;
   width: 30%;
 }
-.main .header_desktop .header__menu__desktop a {
+body .header_desktop .header__menu__desktop a {
   font-size: 16px;
   font-weight: 400;
   line-height: 23px;
   text-transform: uppercase;
   color: #000;
 }
-.main .header_desktop .header__menu__desktop a:hover {
+body .header_desktop .header__menu__desktop a:hover {
   font-weight: 700;
   transition: all 200ms ease-in-out;
 }
 @media screen and (max-width: 768px) {
-  .main .header_desktop .header__menu__desktop {
+  body .header_desktop .header__menu__desktop {
     display: none;
   }
 }
-.main .header_desktop .btn_menu {
+body .header_desktop .btn_menu {
   width: 50px;
   height: 40px;
   cursor: pointer;
@@ -235,12 +234,12 @@ table {
   z-index: 2;
 }
 @media screen and (max-width: 3000px) {
-  .main .header_desktop .btn_menu {
+  body .header_desktop .btn_menu {
     display: none;
   }
 }
 @media screen and (max-width: 768px) {
-  .main .header_desktop .btn_menu {
+  body .header_desktop .btn_menu {
     display: block;
     top: 50%;
     right: 5%;
@@ -248,14 +247,14 @@ table {
   }
 }
 @media screen and (max-width: 375px) {
-  .main .header_desktop .btn_menu {
+  body .header_desktop .btn_menu {
     top: 50%;
     right: 0;
     transform: translate(-45%, -50%);
   }
 }
 @media screen and (max-width: 320px) {
-  .main .header_desktop .btn_menu {
+  body .header_desktop .btn_menu {
     width: 40px;
     height: 30px;
     top: 50%;
@@ -263,7 +262,7 @@ table {
     transform: translate(-40%, -50%);
   }
 }
-.main .header_desktop .btn_menu .line {
+body .header_desktop .btn_menu .line {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -272,7 +271,7 @@ table {
   height: 3px;
   background-color: #000;
 }
-.main .header_desktop .btn_menu .line::before {
+body .header_desktop .btn_menu .line::before {
   content: "";
   position: absolute;
   bottom: 12px;
@@ -280,7 +279,7 @@ table {
   width: 100%;
   height: 3px;
 }
-.main .header_desktop .btn_menu .line::after {
+body .header_desktop .btn_menu .line::after {
   content: "";
   position: absolute;
   top: 12px;
@@ -288,17 +287,17 @@ table {
   width: 100%;
   height: 3px;
 }
-.main .header_desktop .btn_menu.is-active .line::after {
+body .header_desktop .btn_menu.is-active .line::after {
   top: 0;
   transform: rotate(45deg);
   transition: top 300ms ease, transform 200ms 200ms ease;
 }
-.main .header_desktop .btn_menu.is-active .line::before {
+body .header_desktop .btn_menu.is-active .line::before {
   bottom: 0;
   transform: rotate(-45deg);
   transition: top 300ms ease, transform 200ms 200ms ease;
 }
-.main .header_desktop .btn_menu.is-active .line {
+body .header_desktop .btn_menu.is-active .line {
   background: transparent;
 }
 
@@ -313,7 +312,7 @@ table {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #e00000;
+  background-color: #0074e0;
 }
 .header_mobile .header_mobile_container .header__menu__mobile {
   width: 100%;
@@ -474,11 +473,10 @@ table {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 1;
   top: 0;
   left: 0;
-  display: none;
-  opacity: 0;
+  opacity: 1;
   visibility: hidden;
   transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
 }
@@ -488,10 +486,13 @@ table {
 }
 .popup_modale .popup_container {
   background: white;
+  margin: 0 75px 0 75px;
+  padding: 10px;
   border: 5px solid #000;
   border-radius: 2px;
   max-width: 600px;
-  height: auto;
+  height: -moz-fit-content;
+  height: fit-content;
   overflow-x: hidden;
   position: relative;
 }
@@ -532,88 +533,56 @@ table {
 .wpcf7-form {
   width: 500px;
   height: 600px;
-  margin: 0 auto;
+  margin-left: 150px;
+  font-family: "Poppins";
 }
 @media screen and (max-width: 425px) {
   .wpcf7-form {
     max-width: 100%;
   }
 }
-.wpcf7-form label {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 18px;
-  font-family: "Poppins", sans-serif;
+.wpcf7-form .label-form {
+  border: none;
+  background-color: none;
+  color: black;
 }
-.wpcf7-form .form_group {
-  width: 263px;
-  height: 63px;
-  margin: 0 auto 50px auto;
-}
-@media screen and (max-width: 425px) {
-  .wpcf7-form .form_group {
-    max-width: 100%;
-  }
-}
-.wpcf7-form .form_group input {
-  width: 100%;
+.wpcf7-form input, .wpcf7-form textarea {
+  border-radius: 10px;
+  border: 1px solid black;
   height: 40px;
-  border-radius: 8px;
-  border: 1px solid #b8bbc2;
-}
-@media screen and (max-width: 320px) {
-  .wpcf7-form .form_group input {
-    max-width: 97%;
-  }
-}
-.wpcf7-form .form_reference span input {
-  text-transform: uppercase;
-  font-size: 22px;
-}
-.wpcf7-form .form_textarea {
   width: 260px;
-  margin: 30px auto 20px auto;
+  font-family: "Space Mono";
 }
-@media screen and (max-width: 425px) {
-  .wpcf7-form .form_textarea {
-    max-width: 100%;
-  }
+.wpcf7-form textarea {
+  height: 190px;
 }
-.wpcf7-form .form_textarea textarea {
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid #b8bbc2;
-}
-@media screen and (max-width: 320px) {
-  .wpcf7-form .form_textarea textarea {
-    max-width: 97%;
-  }
-}
-.wpcf7-form .form_submit {
+.wpcf7-form button {
+  transition: background-color 0.3s ease-in-out;
+  border: none;
   width: 260px;
-  margin: auto;
 }
-@media screen and (max-width: 425px) {
-  .wpcf7-form .form_submit {
-    max-width: 100%;
-  }
-}
-.wpcf7-form .form_submit input[type=submit] {
-  width: 100%;
+.wpcf7-form .submit-btn, .wpcf7-form .charger-plus, .wpcf7-form #contact-btn {
+  background-color: #D8D8D8;
+  transition: background-color 0.3s ease-in-out;
+  width: 260px;
   height: 50px;
-  background-color: #d8d8d8;
-  border: 1px solid #b8bbc2;
+  border: none;
   border-radius: 2px;
-  cursor: pointer;
-  font-size: 14px;
-  font-family: space mono;
-  font-weight: 400;
 }
-.wpcf7-form .form_submit input[type=submit]:hover {
-  color: #fff;
-  background-color: #000;
-  transition: background-color 300ms ease-in-out;
+.wpcf7-form .form {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.wpcf7-form .wpcf7-response-output {
-  margin: 0 auto !important;
+.wpcf7-form .form ul {
+  padding: 0px;
+  margin: 0px;
+}
+.wpcf7-form .form ul li {
+  display: flex;
+}
+.wpcf7-form .form div p {
+  padding: 0px;
+  margin: 0px;
 }/*# sourceMappingURL=style.css.map */

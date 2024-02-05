@@ -1,8 +1,8 @@
-.main {
+body {
     max-width: 100%;
     margin: 0 auto;
     font-family: "Space Mono", monospace;
-    // Menu Desktop
+    // Menu Desktop 
     .header_desktop {
         display: flex;
         justify-content: space-around;
@@ -62,7 +62,7 @@
                 display: none;
             }
         }
-        /* Btn Menu Burger  */
+        /* Button Menu Burger  */
         .btn_menu {
             width: 50px;
             height: 40px;
@@ -119,7 +119,7 @@
                 }
             }
         }
-        /* Animation Btn Menu Burger */
+        /* Animation Button Menu Burger */
         .btn_menu.is-active .line::after {
             top: 0;
             transform: rotate(45deg);
@@ -146,7 +146,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #e00000;
+        background-color: #0074e0;
         .header__menu__mobile {
             width: 100%;
             height: 100%;

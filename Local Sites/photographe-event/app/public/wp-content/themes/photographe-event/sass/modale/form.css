@@ -1,88 +1,56 @@
 .wpcf7-form {
   width: 500px;
   height: 600px;
-  margin: 0 auto;
+  margin-left: 150px;
+  font-family: "Poppins";
 }
 @media screen and (max-width: 425px) {
   .wpcf7-form {
     max-width: 100%;
   }
 }
-.wpcf7-form label {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 18px;
-  font-family: "Poppins", sans-serif;
+.wpcf7-form .label-form {
+  border: none;
+  background-color: none;
+  color: black;
 }
-.wpcf7-form .form_group {
-  width: 263px;
-  height: 63px;
-  margin: 0 auto 50px auto;
-}
-@media screen and (max-width: 425px) {
-  .wpcf7-form .form_group {
-    max-width: 100%;
-  }
-}
-.wpcf7-form .form_group input {
-  width: 100%;
+.wpcf7-form input, .wpcf7-form textarea {
+  border-radius: 10px;
+  border: 1px solid black;
   height: 40px;
-  border-radius: 8px;
-  border: 1px solid #b8bbc2;
-}
-@media screen and (max-width: 320px) {
-  .wpcf7-form .form_group input {
-    max-width: 97%;
-  }
-}
-.wpcf7-form .form_reference span input {
-  text-transform: uppercase;
-  font-size: 22px;
-}
-.wpcf7-form .form_textarea {
   width: 260px;
-  margin: 30px auto 20px auto;
+  font-family: "Space Mono";
 }
-@media screen and (max-width: 425px) {
-  .wpcf7-form .form_textarea {
-    max-width: 100%;
-  }
+.wpcf7-form textarea {
+  height: 190px;
 }
-.wpcf7-form .form_textarea textarea {
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid #b8bbc2;
-}
-@media screen and (max-width: 320px) {
-  .wpcf7-form .form_textarea textarea {
-    max-width: 97%;
-  }
-}
-.wpcf7-form .form_submit {
+.wpcf7-form button {
+  transition: background-color 0.3s ease-in-out;
+  border: none;
   width: 260px;
-  margin: auto;
 }
-@media screen and (max-width: 425px) {
-  .wpcf7-form .form_submit {
-    max-width: 100%;
-  }
-}
-.wpcf7-form .form_submit input[type=submit] {
-  width: 100%;
+.wpcf7-form .submit-btn, .wpcf7-form .charger-plus, .wpcf7-form #contact-btn {
+  background-color: #D8D8D8;
+  transition: background-color 0.3s ease-in-out;
+  width: 260px;
   height: 50px;
-  background-color: #d8d8d8;
-  border: 1px solid #b8bbc2;
+  border: none;
   border-radius: 2px;
-  cursor: pointer;
-  font-size: 14px;
-  font-family: space mono;
-  font-weight: 400;
 }
-.wpcf7-form .form_submit input[type=submit]:hover {
-  color: #fff;
-  background-color: #000;
-  transition: background-color 300ms ease-in-out;
+.wpcf7-form .form {
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.wpcf7-form .wpcf7-response-output {
-  margin: 0 auto !important;
+.wpcf7-form .form ul {
+  padding: 0px;
+  margin: 0px;
+}
+.wpcf7-form .form ul li {
+  display: flex;
+}
+.wpcf7-form .form div p {
+  padding: 0px;
+  margin: 0px;
 }/*# sourceMappingURL=form.css.map */
