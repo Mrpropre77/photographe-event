@@ -2,7 +2,7 @@
 
     <?php
     // récupération de la catégorie
-    $category = array('mariage', 'concert', 'television', 'reception');
+    $category = array('mariage', 'concert', 'télévision', 'réception');
 
     // définition des arguments
     $args = array(

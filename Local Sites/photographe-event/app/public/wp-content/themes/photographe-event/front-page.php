@@ -37,7 +37,7 @@
             <div class="btn_load_more">
                 <span id="loadMoreBtn">Charger Plus</span>
             </div>
-        </div>
+        </div><!-- .div_btn_load_more -->
 
 <?php endwhile;
 endif; ?>

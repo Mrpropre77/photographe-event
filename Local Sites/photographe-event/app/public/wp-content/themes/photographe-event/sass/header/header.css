@@ -1,9 +1,9 @@
-body {
+.main {
   max-width: 100%;
   margin: 0 auto;
   font-family: "Space Mono", monospace;
 }
-body .header_desktop {
+.main .header_desktop {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -12,73 +12,73 @@ body .header_desktop {
   background-color: #fff;
   position: relative;
   box-shadow: 0px 4px 14px 10px rgba(0, 0, 0, 0.031372549);
-  /* Button Menu Burger  */
-  /* Animation Button Menu Burger */
+  /* Btn Menu Burger  */
+  /* Animation Btn Menu Burger */
 }
 @media screen and (max-width: 768px) {
-  body .header_desktop {
+  .main .header_desktop {
     justify-content: space-between;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.0901960784);
   }
 }
-body .header_desktop .header_logo_link {
+.main .header_desktop .header_logo_link {
   width: 250px;
 }
 @media screen and (max-width: 768px) {
-  body .header_desktop .header_logo_link {
+  .main .header_desktop .header_logo_link {
     position: absolute;
     width: 250px;
   }
 }
-body .header_desktop .header_logo_link .header_logo_img {
+.main .header_desktop .header_logo_link .header_logo_img {
   width: 100%;
 }
 @media screen and (max-width: 768px) {
-  body .header_desktop .header_logo_link .header_logo_img {
+  .main .header_desktop .header_logo_link .header_logo_img {
     position: absolute;
     left: 5%;
     transform: translate(20%, -50%);
   }
 }
 @media screen and (max-width: 425px) {
-  body .header_desktop .header_logo_link .header_logo_img {
+  .main .header_desktop .header_logo_link .header_logo_img {
     left: 0;
     transform: translate(10%, -50%);
   }
 }
 @media screen and (max-width: 375px) {
-  body .header_desktop .header_logo_link .header_logo_img {
+  .main .header_desktop .header_logo_link .header_logo_img {
     left: 0;
     transform: translate(5%, -50%);
   }
 }
 @media screen and (max-width: 325px) {
-  body .header_desktop .header_logo_link .header_logo_img {
+  .main .header_desktop .header_logo_link .header_logo_img {
     width: 235px;
   }
 }
-body .header_desktop .header__menu__desktop {
+.main .header_desktop .header__menu__desktop {
   display: flex;
   justify-content: space-around;
   width: 30%;
 }
-body .header_desktop .header__menu__desktop a {
+.main .header_desktop .header__menu__desktop a {
   font-size: 16px;
   font-weight: 400;
   line-height: 23px;
   text-transform: uppercase;
   color: #000;
 }
-body .header_desktop .header__menu__desktop a:hover {
+.main .header_desktop .header__menu__desktop a:hover {
   font-weight: 700;
   transition: all 200ms ease-in-out;
 }
 @media screen and (max-width: 768px) {
-  body .header_desktop .header__menu__desktop {
+  .main .header_desktop .header__menu__desktop {
     display: none;
   }
 }
-body .header_desktop .btn_menu {
+.main .header_desktop .btn_menu {
   width: 50px;
   height: 40px;
   cursor: pointer;
@@ -89,12 +89,12 @@ body .header_desktop .btn_menu {
   z-index: 2;
 }
 @media screen and (max-width: 3000px) {
-  body .header_desktop .btn_menu {
+  .main .header_desktop .btn_menu {
     display: none;
   }
 }
 @media screen and (max-width: 768px) {
-  body .header_desktop .btn_menu {
+  .main .header_desktop .btn_menu {
     display: block;
     top: 50%;
     right: 5%;
@@ -102,14 +102,14 @@ body .header_desktop .btn_menu {
   }
 }
 @media screen and (max-width: 375px) {
-  body .header_desktop .btn_menu {
+  .main .header_desktop .btn_menu {
     top: 50%;
     right: 0;
     transform: translate(-45%, -50%);
   }
 }
 @media screen and (max-width: 320px) {
-  body .header_desktop .btn_menu {
+  .main .header_desktop .btn_menu {
     width: 40px;
     height: 30px;
     top: 50%;
@@ -117,7 +117,7 @@ body .header_desktop .btn_menu {
     transform: translate(-40%, -50%);
   }
 }
-body .header_desktop .btn_menu .line {
+.main .header_desktop .btn_menu .line {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -126,7 +126,7 @@ body .header_desktop .btn_menu .line {
   height: 3px;
   background-color: #000;
 }
-body .header_desktop .btn_menu .line::before {
+.main .header_desktop .btn_menu .line::before {
   content: "";
   position: absolute;
   bottom: 12px;
@@ -134,7 +134,7 @@ body .header_desktop .btn_menu .line::before {
   width: 100%;
   height: 3px;
 }
-body .header_desktop .btn_menu .line::after {
+.main .header_desktop .btn_menu .line::after {
   content: "";
   position: absolute;
   top: 12px;
@@ -142,17 +142,17 @@ body .header_desktop .btn_menu .line::after {
   width: 100%;
   height: 3px;
 }
-body .header_desktop .btn_menu.is-active .line::after {
+.main .header_desktop .btn_menu.is-active .line::after {
   top: 0;
   transform: rotate(45deg);
   transition: top 300ms ease, transform 200ms 200ms ease;
 }
-body .header_desktop .btn_menu.is-active .line::before {
+.main .header_desktop .btn_menu.is-active .line::before {
   bottom: 0;
   transform: rotate(-45deg);
   transition: top 300ms ease, transform 200ms 200ms ease;
 }
-body .header_desktop .btn_menu.is-active .line {
+.main .header_desktop .btn_menu.is-active .line {
   background: transparent;
 }
 
@@ -167,7 +167,7 @@ body .header_desktop .btn_menu.is-active .line {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #0074e0;
+  background-color: #0052e0;
 }
 .header_mobile .header_mobile_container .header__menu__mobile {
   width: 100%;
