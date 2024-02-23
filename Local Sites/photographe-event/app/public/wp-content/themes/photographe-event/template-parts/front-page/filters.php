@@ -42,12 +42,8 @@
             </span>
         </div>
         <ul id="list_items_date" class="list_items_filter">
-            <?php
-            $terms = get_terms('date');
-            foreach ($terms as $term) {
-                echo '<li id="item_date" class="list_item" data-filter=' . $term->slug . '>' . $term->name . '</li>';
-            }
-            ?>
+            <li id="item_date" class="list_item selected_filter_date">Les plus récentes</li>
+            <li id="item_date" class="list_item selected_filter_date">Les plus anciennes</li>
         </ul>
     </div><!-- .wrapper_select_boxes -->
 </section><!-- #section_selects -->

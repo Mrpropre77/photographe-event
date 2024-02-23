@@ -4,8 +4,7 @@
 
         <!-- Include Section Hero -->
         <?php get_template_part('template-parts/front-page/section_hero'); ?>
-
-
+        
         <!-- Include Section Filters -->
         <?php get_template_part('template-parts/front-page/filters'); ?>
 
@@ -13,13 +12,13 @@
         <section id="section_result_filtered" class="section_photo_block_container">
             <?php
             // Post per page
-            $post_per_page = 12;
+            $post_per_page = 16;
             // Argument definition
             $args = array(
                 'orderby' => 'rand',
-                'post_type' => 'photo',
+                'post_type' => 'photos',
                 'posts_per_page' => $post_per_page,
-                // 'paged' => 10,
+                'paged' => 1,
             );
             // Definition / Execution of wp-query
             $query = new WP_Query($args);

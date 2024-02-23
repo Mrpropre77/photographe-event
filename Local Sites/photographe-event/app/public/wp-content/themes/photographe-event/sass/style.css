@@ -149,6 +149,9 @@ table {
   margin: 0 auto;
   font-family: "Space Mono", monospace;
 }
+.main .site__heading {
+  color: black;
+}
 .main .header_desktop {
   display: flex;
   justify-content: space-around;
@@ -305,15 +308,15 @@ table {
 .header_mobile {
   position: relative;
   display: none;
-  z-index: 2;
+  z-index: 1;
 }
 .header_mobile .header_mobile_container {
   position: fixed;
-  top: 80px;
+  top: 111px;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #0052e0;
+  background-color: #E00000;
 }
 .header_mobile .header_mobile_container .header__menu__mobile {
   width: 100%;
@@ -368,7 +371,6 @@ table {
   overflow: hidden;
   width: 100%;
   height: 100%;
-  transform: scale(0);
   transition: 300ms;
 }
 .photo_block_overlay .icon_eye {
@@ -394,6 +396,10 @@ table {
   top: 20px;
   right: 20px;
   cursor: pointer;
+  opacity: 0;
+}
+.photo_block_overlay .icon_fullscreen:hover {
+  opacity: 1;
 }
 .photo_block_overlay .text_category,
 .photo_block_overlay .text_reference {
@@ -401,8 +407,11 @@ table {
   font-size: 14px;
   font-family: "Space Mono", sans-serif;
   text-transform: uppercase;
-  color: #fff;
   position: absolute;
+  color: #fff;
+}
+.photo_block_overlay a {
+  color: #fff;
 }
 .photo_block_overlay .text_reference {
   bottom: 20px;
@@ -433,7 +442,7 @@ table {
 }
 @media screen and (max-width: 768px) {
   .hero_section {
-    height: 52vh;
+    height: 30vh;
   }
 }
 @media screen and (max-width: 425px) {
@@ -481,12 +490,12 @@ table {
 }
 @media screen and (max-width: 1024px) {
   #section_selects {
+    flex-direction: column !important;
     width: 100%;
   }
 }
 @media screen and (max-width: 425px) {
   #section_selects {
-    flex-direction: column;
     padding: 40px 0 40px 0;
   }
 }
@@ -519,6 +528,7 @@ table {
   font-weight: 500;
   font-family: "Poppins";
   text-transform: uppercase;
+  color: black;
 }
 #section_selects .wrapper_select_boxes .title_filter_box .span_icon_filter {
   width: 30px;
@@ -528,6 +538,7 @@ table {
   display: flex;
   justify-content: center;
   transition: all 300ms ease-in;
+  color: black;
 }
 #section_selects .wrapper_select_boxes .title_filter_box .span_icon_filter_rotate {
   transform: rotate(180deg);
@@ -594,7 +605,7 @@ table {
   height: 550px;
   margin: auto;
   display: flex;
-  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("http://localhost:8888/PhotographeEvent/wp-content/themes/photographe-event/assets/img/not-found.webp");
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("http://photographe-event.local/wp-content/themes/photographe-event/assets/img/not-found.webp");
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -783,6 +794,7 @@ table {
   font-weight: 400;
   text-transform: uppercase;
   margin-left: 50px;
+  color: black;
 }
 @media screen and (max-width: 425px) {
   #footer_menu .footer_text {
@@ -863,9 +875,11 @@ table {
   }
 }
 .wpcf7-form {
-  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
   height: 600px;
-  margin-left: 150px;
   font-family: "Poppins";
   text-transform: uppercase;
 }
@@ -875,6 +889,10 @@ table {
     max-width: 100%;
   }
 }
+.wpcf7-form label {
+  color: black;
+}
+
 .wpcf7-form .label-form {
   border: none;
   background-color: none;
@@ -893,6 +911,8 @@ table {
 .wpcf7-form .wpcf7-submit, .wpcf7-form .has-spinner {
   border-radius: 2px;
   border: none;
+  display: flex;
+  justify-content: center;
 }
 
 .wpcf7-form textarea {
@@ -1117,7 +1137,7 @@ table {
 }
 #main_single_photo_page .section_post_photos {
   max-width: 100%;
-  height: 72vh;
+  height: 100vh;
   margin-top: 38px;
   font-family: "Space Mono", monospace;
   display: flex;
@@ -1148,7 +1168,7 @@ table {
 }
 #main_single_photo_page .section_post_photos .post_photo_desc .post_photo_desc_content {
   position: absolute;
-  bottom: 20px;
+  bottom: 73px;
 }
 @media screen and (max-width: 1024px) {
   #main_single_photo_page .section_post_photos .post_photo_desc .post_photo_desc_content {
@@ -1193,6 +1213,14 @@ table {
   text-transform: uppercase;
   color: #000;
   margin-top: 15px;
+}
+@media screen and (max-width: 768px) {
+  #main_single_photo_page .section_post_photos .post_photo_desc .post_photo_desc_content .post_photo_text {
+    margin-left: 20px;
+  }
+}
+#main_single_photo_page .section_post_photos .post_photo_desc .post_photo_desc_content a {
+  color: #000;
 }
 #main_single_photo_page .section_post_photos .post_photo_img {
   width: 50%;
@@ -1239,6 +1267,10 @@ table {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
+}
+#main_single_photo_page .section_post_photos .post_photo_img .photo_block .icon_fullscreen:hover {
+  opacity: 1;
 }
 #main_single_photo_page .section_post_photos .post_photo_img .photo_block img {
   max-width: 100%;

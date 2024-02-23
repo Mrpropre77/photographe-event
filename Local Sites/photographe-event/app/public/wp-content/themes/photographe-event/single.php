@@ -64,28 +64,22 @@
                     <h3>Vous aimerez aussi</h3>
                 </div>
                 <article class="post_other_imgs_container">
-                    <?php
-                    // Category recovery 
-                    $current_category = get_field('categories');
-                    // definition of arguments
-                    $args = array(
-                        'post_type' => 'photo',
-                        'posts_per_page' => 2,
-                        'post__not_in' => [get_the_ID()],
-                        'tax_query' => array(
-                            array(
-                                'taxonomy' => 'categorie',
-                                'field'    => 'slug',
-                                'terms' => $current_category,
-                            ),
-                        ),
-                    );
-                    // Définition / Execution of wp query
-                    $query = new WP_Query($args);
-                    // Wp query execution loop
-                    while ($query->have_posts()) : $query->the_post();
-                        $post_url = get_permalink();
-                    ?>
+                <?php
+            // Post per page
+            $post_per_page = 2;
+            // Argument definition
+            $args = array(
+                'orderby' => 'rand',
+                'post_type' => 'photos',
+                'posts_per_page' => $post_per_page,
+                'paged' => 1,
+            );
+            // Definition / Execution of wp-query
+            $query = new WP_Query($args);
+            // Execution loop of wp-query
+            while ($query->have_posts()) : $query->the_post();
+                $post_url = get_permalink();
+            ?>
                         <!-- Template Post Card -->
                         <?php get_template_part('template-parts/photo_block'); ?>
                     <?php endwhile;

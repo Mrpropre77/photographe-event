@@ -7,7 +7,7 @@
     // définition des arguments
     $args = array(
         'orderby' => 'rand',
-        'post_type' => 'photo',
+        'post_type' => 'photos',
         'posts_per_page' => 1,
         'tax_query' => array(
             'relation' => 'AND',

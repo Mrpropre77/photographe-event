@@ -41,6 +41,7 @@
   font-weight: 400;
   text-transform: uppercase;
   margin-left: 50px;
+  color: black;
 }
 @media screen and (max-width: 425px) {
   #footer_menu .footer_text {

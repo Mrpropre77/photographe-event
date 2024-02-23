@@ -1,7 +1,9 @@
 .wpcf7-form {
-  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
   height: 600px;
-  margin-left: 150px;
   font-family: "Poppins";
   text-transform: uppercase;
 }
@@ -11,6 +13,10 @@
     max-width: 100%;
   }
 }
+.wpcf7-form label {
+  color: black;
+}
+
 .wpcf7-form .label-form {
   border: none;
   background-color: none;
@@ -29,6 +35,8 @@
 .wpcf7-form .wpcf7-submit, .wpcf7-form .has-spinner {
   border-radius: 2px;
   border: none;
+  display: flex;
+  justify-content: center;
 }
 
 .wpcf7-form textarea {
