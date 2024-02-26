@@ -1,38 +1,27 @@
 <section class="hero_section">
 
-    <?php
-    // récupération de la catégorie
-    $category = array('mariage', 'concert', 'télévision', 'réception');
-
-    // définition des arguments
-    $args = array(
-        'orderby' => 'rand',
-        'post_type' => 'photos',
-        'posts_per_page' => 1,
-        'tax_query' => array(
-            'relation' => 'AND',
-            array(
-                'taxonomy' => 'format',
-                'field' => 'slug',
-                'terms' => 'paysage',
-            ),
-            array(
-                'taxonomy' => 'categorie',
-                'field' => 'slug',
-                'terms' => $category,
-            ),
-        ),
-    );
-    // Définition / execution de wp query
-    $query = new WP_Query($args);
-    // Boucle d'execution de wp query
-    while ($query->have_posts()) : $query->the_post();
-    ?>
-        <div class="hero_img">
+<?php
+            // Post per page
+            $post_per_page = 1;
+            // Argument definition
+            $args = array(
+                'orderby' => 'rand',
+                'post_type' => 'photos',
+                'posts_per_page' => $post_per_page,
+                'paged' => 1,
+            );
+            // Definition / Execution of wp-query
+            $query = new WP_Query($args);
+            // Execution loop of wp-query
+            while ($query->have_posts()) : $query->the_post();
+                $post_url = get_permalink();
+            ?>
+                        <!-- Template Post Card -->
+                        <div class="hero_img">
             <?php get_template_part('template-parts/photo_img'); ?>
-        </div>
-    <?php endwhile;
-    wp_reset_postdata() ?>
+                        </div>
+                    <?php endwhile;
+                    wp_reset_postdata() ?>
 
     <h1 class="hero_section_title">
         <svg viewbox="0 0 10 2">

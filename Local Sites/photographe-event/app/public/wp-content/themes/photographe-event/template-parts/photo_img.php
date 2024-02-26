@@ -1,5 +1,3 @@
-<?php $image_id = get_field('photos'); // Recover Img's ID
-if ($image_id) {
-    echo wp_get_attachment_image($image_id, 'large');
-}
-?>
+<a data-href="<?php echo wp_get_attachment_image_src(get_post_thumbnail_id(), 'large')[0]; ?>" class="photo">
+<?php the_post_thumbnail(); ?>
+</a>

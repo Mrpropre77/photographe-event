@@ -4,7 +4,7 @@
     align-items: center;
     height: 40px;
     border-top: 1px solid #000;
-    @media screen and (max-width: 425px) {
+    @media screen and (max-width: 1024px) {
         flex-direction: column;
         height: auto;
         padding-top: 30px;
@@ -17,7 +17,7 @@
         li:nth-child(1) {
             margin-right: 50px;
         }
-        @media screen and (max-width: 425px) {
+        @media screen and (max-width: 1024px) {
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -38,7 +38,7 @@
         text-transform: uppercase;
         margin-left: 50px;
         color: black;
-        @media screen and (max-width: 425px) {
+        @media screen and (max-width: 1024px) {
             margin-left: 0;
             margin-top: 30px;
             margin-bottom: 20px;

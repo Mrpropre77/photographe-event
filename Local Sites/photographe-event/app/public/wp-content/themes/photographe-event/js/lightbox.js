@@ -16,7 +16,7 @@ const afterChevron = document.querySelector(".after_chevron");
 // Lightbox Reference
 const lightboxRef = document.querySelector(".lightbox_reference");
 // Lightbox Category
-const lightboxCateg = document.querySelector(".lightbox_categorie");
+const lightboxCateg = document.querySelector(".lightbox_categoriies");
 // Lightbox Title
 const lightboxTitre = document.querySelector(".lightbox_title");
 // Create variable to stock elements .icon_fullscreen
@@ -34,8 +34,8 @@ function updateLightbox(div) {
     lightboxImage.setAttribute("src", imageSrc);
 
     // Update Categorie
-    const lightboxcateg = lightboxOverlay.querySelector(".lightbox_categorie");
-    let imagecateg = div.getAttribute("data-categorie");
+    const lightboxcateg = lightboxOverlay.querySelector(".lightbox_categoriies");
+    let imagecateg = div.getAttribute("data-categoriies");
     lightboxcateg.textContent = imagecateg;
 
     // Update Title
@@ -106,8 +106,8 @@ document.addEventListener("click", function (e) {
     lightboxImage.setAttribute("src", imageSrc);
 
     // Categorie
-    const imagecateg = div.getAttribute("data-categorie");
-    let lightboxcateg = lightboxOverlay.querySelector(".lightbox_categorie");
+    const imagecateg = div.getAttribute("data-categoriies");
+    let lightboxcateg = lightboxOverlay.querySelector(".lightbox_categoriies");
     lightboxcateg.textContent = imagecateg;
 
     // Reference

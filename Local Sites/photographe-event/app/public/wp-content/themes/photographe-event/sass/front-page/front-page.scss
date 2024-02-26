@@ -1,9 +1,8 @@
 .hero_section {
     width: 100%;
     height: 90vh;
-    background: url("../assets/img/nathalie-11.webp");
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
     background-size: 145%;
     position: relative;
     @media screen and (max-width: 1024px) {
@@ -145,7 +144,7 @@
     .wrapper_select_boxes:nth-child(2) {
         margin-right: 25.8%;
         @media screen and (max-width: 1024px) {
-            margin-right: 0;
+            margin-right: auto;
         }
         @media screen and (max-width: 768px) {
             margin-right: auto;
@@ -239,13 +238,15 @@
         @media screen and (max-width: 1024px) {
             width: 250px;
         }
-        span {
+        button {
             width: 100%;
             height: 100%;
+            font-family: 'Space Mono';
             color: #000;
             background-color: #d8d8d8;
             border-radius: 2px;
             cursor: pointer;
+            border: none;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -254,7 +255,7 @@
                 width: 100%;
             }
         }
-        span:hover {
+        button:hover {
             font-weight: 700;
             color: #fff;
             background-color: #000;

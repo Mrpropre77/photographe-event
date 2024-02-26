@@ -1,7 +1,6 @@
 .hero_section {
   width: 100%;
   height: 90vh;
-  background: url("../assets/img/nathalie-11.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 145%;
@@ -163,7 +162,7 @@
 }
 @media screen and (max-width: 1024px) {
   #section_selects .wrapper_select_boxes:nth-child(2) {
-    margin-right: 0;
+    margin-right: auto;
   }
 }
 @media screen and (max-width: 768px) {
@@ -278,24 +277,26 @@
     width: 250px;
   }
 }
-.div_btn_load_more .btn_load_more span {
+.div_btn_load_more .btn_load_more button {
   width: 100%;
   height: 100%;
+  font-family: "Space Mono";
   color: #000;
   background-color: #d8d8d8;
   border-radius: 2px;
   cursor: pointer;
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 300ms ease-in-out;
 }
 @media screen and (max-width: 768px) {
-  .div_btn_load_more .btn_load_more span {
+  .div_btn_load_more .btn_load_more button {
     width: 100%;
   }
 }
-.div_btn_load_more .btn_load_more span:hover {
+.div_btn_load_more .btn_load_more button:hover {
   font-weight: 700;
   color: #fff;
   background-color: #000;

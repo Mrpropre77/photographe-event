@@ -8,9 +8,9 @@ function load_more_imgs()
     check_ajax_referer('load_more_posts', 'security');
 
     $args = array(
-        'post_type' => 'photo',
+        'post_type' => 'photos',
         'post_status' => 'publish',
-        'posts_per_page' => -1,
+        'posts_per_page' => 8,
         'paged' => $_POST['page'],
         'post__not_in' => explode(',', $_POST['exclude']),
     );

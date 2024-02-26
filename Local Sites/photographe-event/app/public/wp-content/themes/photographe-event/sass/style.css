@@ -367,11 +367,12 @@ table {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  overflow: hidden;
   width: 100%;
   height: 100%;
   transition: 300ms;
+}
+.photo_block_overlay .photo:hover {
+  filter: brightness(0.5);
 }
 .photo_block_overlay .icon_eye {
   width: 46px;
@@ -380,6 +381,7 @@ table {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 0;
 }
 .photo_block_overlay .icon_eye a {
   width: 100%;
@@ -398,9 +400,6 @@ table {
   cursor: pointer;
   opacity: 0;
 }
-.photo_block_overlay .icon_fullscreen:hover {
-  opacity: 1;
-}
 .photo_block_overlay .text_category,
 .photo_block_overlay .text_reference {
   width: auto;
@@ -409,6 +408,7 @@ table {
   text-transform: uppercase;
   position: absolute;
   color: #fff;
+  opacity: 0;
 }
 .photo_block_overlay a {
   color: #fff;
@@ -422,14 +422,16 @@ table {
   right: 20px;
 }
 
-.photo_block:hover .photo_block_overlay {
-  transform: scale(1);
+.photo_block_overlay:hover .icon_eye,
+.photo_block_overlay:hover .icon_fullscreen,
+.photo_block_overlay:hover .text_category,
+.photo_block_overlay:hover .text_reference {
+  opacity: 1;
 }
 
 .hero_section {
   width: 100%;
   height: 90vh;
-  background: url("../assets/img/nathalie-11.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 145%;
@@ -591,7 +593,7 @@ table {
 }
 @media screen and (max-width: 1024px) {
   #section_selects .wrapper_select_boxes:nth-child(2) {
-    margin-right: 0;
+    margin-right: auto;
   }
 }
 @media screen and (max-width: 768px) {
@@ -706,24 +708,26 @@ table {
     width: 250px;
   }
 }
-.div_btn_load_more .btn_load_more span {
+.div_btn_load_more .btn_load_more button {
   width: 100%;
   height: 100%;
+  font-family: "Space Mono";
   color: #000;
   background-color: #d8d8d8;
   border-radius: 2px;
   cursor: pointer;
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 300ms ease-in-out;
 }
 @media screen and (max-width: 768px) {
-  .div_btn_load_more .btn_load_more span {
+  .div_btn_load_more .btn_load_more button {
     width: 100%;
   }
 }
-.div_btn_load_more .btn_load_more span:hover {
+.div_btn_load_more .btn_load_more button:hover {
   font-weight: 700;
   color: #fff;
   background-color: #000;
@@ -758,7 +762,7 @@ table {
   height: 40px;
   border-top: 1px solid #000;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1024px) {
   #footer_menu {
     flex-direction: column;
     height: auto;
@@ -774,7 +778,7 @@ table {
 #footer_menu .site__footer__menu li:nth-child(1) {
   margin-right: 50px;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1024px) {
   #footer_menu .site__footer__menu {
     flex-direction: column;
     justify-content: center;
@@ -796,7 +800,7 @@ table {
   margin-left: 50px;
   color: black;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1024px) {
   #footer_menu .footer_text {
     margin-left: 0;
     margin-top: 30px;
@@ -1109,7 +1113,7 @@ table {
   left: 0%;
   bottom: -4%;
 }
-.lightbox_overlay .lightbox_categorie {
+.lightbox_overlay .lightbox_categoriies {
   right: 0%;
   bottom: -4%;
 }
@@ -1137,10 +1141,11 @@ table {
 }
 #main_single_photo_page .section_post_photos {
   max-width: 100%;
-  height: 100vh;
-  margin-top: 38px;
+  height: 47vh;
+  margin-top: 34px;
   font-family: "Space Mono", monospace;
   display: flex;
+  align-items: stretch;
   gap: 20px;
 }
 @media screen and (max-width: 1024px) {
@@ -1275,8 +1280,8 @@ table {
 #main_single_photo_page .section_post_photos .post_photo_img .photo_block img {
   max-width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
   -o-object-position: 50% 50%;
      object-position: 50% 50%;
 }

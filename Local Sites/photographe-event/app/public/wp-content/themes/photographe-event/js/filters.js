@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
         };
         var formData = new FormData();
         formData.append("action", "filter_results");
-        formData.append("category", selectedFilterCategory);
-        formData.append("format", selectedFilterFormat);
-        formData.append("date", selectedFilterDate);
+        formData.append("categoriies", selectedFilterCategory);
+        formData.append("formats", selectedFilterFormat);
+        formData.append("dates", selectedFilterDate);
 
         xhr.send(formData);
         // During initial loading, check if all filters are empty and hide the default section if necessary

@@ -12,7 +12,7 @@
         <section id="section_result_filtered" class="section_photo_block_container">
             <?php
             // Post per page
-            $post_per_page = 16;
+            $post_per_page = 8;
             // Argument definition
             $args = array(
                 'orderby' => 'rand',
@@ -34,7 +34,7 @@
         </section><!-- section_photo_block_container -->
         <div class="div_btn_load_more">
             <div class="btn_load_more">
-                <span id="loadMoreBtn">Charger Plus</span>
+                <button>Charger Plus</button>
             </div>
         </div><!-- .div_btn_load_more -->
 

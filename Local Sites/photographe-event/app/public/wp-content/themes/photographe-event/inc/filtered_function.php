@@ -12,7 +12,7 @@ function enqueue_scripts_js_ajax()
         'ajaxurl' => admin_url('admin-ajax.php'),
     );
     // Localize the script
-    wp_localize_script('ajax-script', 'photo', $translation_array);
+    wp_localize_script('ajax-script', 'photos', $translation_array);
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts_js_ajax');
 /**
@@ -20,26 +20,26 @@ add_action('wp_enqueue_scripts', 'enqueue_scripts_js_ajax');
  */
 function filter_results()
 {
-    $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
-    $format = isset($_POST['format']) ? sanitize_text_field($_POST['format']) : '';
+    $categorie = isset($_POST['categoriies']) ? sanitize_text_field($_POST['categoriies']) : '';
+    $format = isset($_POST['formats']) ? sanitize_text_field($_POST['formats']) : '';
     $date = isset($_POST['date']) ? sanitize_text_field($_POST['date']) : '';
 
     // Define Query Relation
     $tax_query = array('relation' => 'AND');
 
     // check if category exists before adding corresponding taxonomy
-    if ((isset($category)) and ($category != "")) {
+    if ((isset($categorie)) and ($categorie != "")) {
         $tax_query[] = array(
-            'taxonomy' => 'categorie',
+            'taxonomy' => 'categoriies',
             'field' => 'slug',
-            'terms' => $category,
+            'terms' => $categorie,
         );
     }
 
     // check if format exists before adding corresponding taxonomy
     if ((isset($format)) and ($format != "")) {
         $tax_query[] = array(
-            'taxonomy' => 'format',
+            'taxonomy' => 'formats',
             'field' => 'slug',
             'terms' => $format,
         );
@@ -55,7 +55,7 @@ function filter_results()
     }
 
     $args = array(
-        'post_type' => 'photo',
+        'post_type' => 'photos',
         'posts_per_page' => -1,
         'tax_query' => $tax_query
     );
@@ -75,7 +75,7 @@ function filter_results()
     } else {
         echo '<div class="nothing_result">';
         echo '<p>Aucun résultat trouvé </p>';
-        echo '<p>Pour la catégorie <span>' . $category . '</span></p>';
+        echo '<p>Pour la catégorie <span>' . $categorie . '</span></p>';
         echo '<p>Au format <span>' . $format . '</span></p>';
         echo '<p>En date de <span>' . $date . '</span></p>';
         echo '</div>';

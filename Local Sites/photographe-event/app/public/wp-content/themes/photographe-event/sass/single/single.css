@@ -9,10 +9,11 @@
 }
 #main_single_photo_page .section_post_photos {
   max-width: 100%;
-  height: 100vh;
-  margin-top: 38px;
+  height: 47vh;
+  margin-top: 34px;
   font-family: "Space Mono", monospace;
   display: flex;
+  align-items: stretch;
   gap: 20px;
 }
 @media screen and (max-width: 1024px) {
@@ -147,8 +148,8 @@
 #main_single_photo_page .section_post_photos .post_photo_img .photo_block img {
   max-width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
   -o-object-position: 50% 50%;
      object-position: 50% 50%;
 }

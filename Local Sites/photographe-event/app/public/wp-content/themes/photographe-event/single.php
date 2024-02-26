@@ -8,7 +8,7 @@
                     <div class="post_photo_desc_content">
                         <h1 class="post_photo_title"><?php the_title(); ?></h1>
                         <!-- Display ACF values for post -->
-                        <div class="post_photo_text">Référence : BF<?php the_field('reference'); ?></div>
+                        <div class="post_photo_text">Référence : <?php the_field('reference'); ?></div>
                         <div class="post_photo_text"><?php the_terms( $post->ID, 'categoriies', 'Catégorie : ' ); ?></div>
                         <div class="post_photo_text"><?php the_terms( $post->ID, 'formats', 'Format : ' ); ?></div>
                         <div class="post_photo_text">Type : <?php the_field('type'); ?></div>
@@ -86,11 +86,6 @@
                     wp_reset_postdata() ?>
                 </article>
             </section><!-- .section_post_other_imgs -->
-            <section class="section_btn_load_all_imgs">
-                <div class="btn_load_all_imgs">
-                    <span>Toutes les Photos</span>
-                </div>
-            </section><!-- section_btn_load_all_imgs -->
         </main><!-- #main_single_photo_page -->
 <?php endwhile;
 endif; ?>
