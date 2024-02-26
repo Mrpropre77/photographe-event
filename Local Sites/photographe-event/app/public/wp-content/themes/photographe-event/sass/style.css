@@ -1141,7 +1141,7 @@ table {
 }
 #main_single_photo_page .section_post_photos {
   max-width: 100%;
-  height: 47vh;
+  height: 88vh;
   margin-top: 34px;
   font-family: "Space Mono", monospace;
   display: flex;
@@ -1173,7 +1173,7 @@ table {
 }
 #main_single_photo_page .section_post_photos .post_photo_desc .post_photo_desc_content {
   position: absolute;
-  bottom: 73px;
+  bottom: 259px;
 }
 @media screen and (max-width: 1024px) {
   #main_single_photo_page .section_post_photos .post_photo_desc .post_photo_desc_content {
@@ -1232,7 +1232,7 @@ table {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 @media screen and (max-width: 768px) {
   #main_single_photo_page .section_post_photos .post_photo_img {
