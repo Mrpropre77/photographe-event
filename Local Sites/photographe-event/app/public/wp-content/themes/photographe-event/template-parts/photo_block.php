@@ -15,8 +15,8 @@
         <div class="icon_fullscreen" 
             data-title="<?php the_title(); ?>"
             data-image="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID())); ?>"
-            data-reference="<?php the_field('reference'); ?>" 
-            data-categorie="<?php the_field('categoriies'); ?>">
+            data-reference="<?php the_field('reference'); ?>"
+            data-categorie="<?php echo the_field( $post->ID, 'categoriies'); ?>">
             <img src="<?php echo get_template_directory_uri() . '/assets/img/Icon_fullscreen.png' ?>">
         </div>
     </div>

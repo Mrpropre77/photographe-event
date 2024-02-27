@@ -73,7 +73,13 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < filterItemsDate.length; i++) {
         filterItemsDate[i].addEventListener("click", function () {
             initialFiltersSet = false;
-            selectedFilterDate = this.getAttribute("data-filter");
+            let filterType = this.getAttribute("data-filter");
+            if (filterType === "recent") {
+                selectedFilterDate = "Les plus récentes";
+            } else if (filterType === "older") {
+                selectedFilterDate = "Les plus anciennes";
+            }
+        
             loadResults();
         });
     }

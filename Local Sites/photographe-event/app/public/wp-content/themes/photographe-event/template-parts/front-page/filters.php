@@ -42,8 +42,8 @@
             </span>
         </div>
         <ul id="list_items_date" class="list_items_filter">
-            <li id="item_date" class="list_item selected_filter_date">Les plus récentes</li>
-            <li id="item_date" class="list_item selected_filter_date">Les plus anciennes</li>
+            <li id="item_date" class="list_item selected_filter_date" data-filter="recent">Les plus récentes</li>
+            <li id="item_date" class="list_item selected_filter_date" data-filter="older">Les plus anciennes</li>
         </ul>
     </div><!-- .wrapper_select_boxes -->
 </section><!-- #section_selects -->
