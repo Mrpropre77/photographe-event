@@ -28,7 +28,7 @@ function updateLightboxArray() {
 
 // Function Update Lightbox
 function updateLightbox(div) {
-    // Update Categorie
+    // Update Image
     const lightboxImage = lightboxOverlay.querySelector(".lightbox_image");
     let imageSrc = div.getAttribute("data-image");
     lightboxImage.setAttribute("src", imageSrc);
@@ -43,9 +43,8 @@ function updateLightbox(div) {
     let imageTitle = div.getAttribute("data-title");
     lightboxTitle.textContent = imageTitle;
 
-    const lightboxReference = lightboxOverlay.querySelector(
-        ".lightbox_reference"
-    );
+    // Update Reference
+    const lightboxReference = lightboxOverlay.querySelector(".lightbox_reference");
     let imageRef = div.getAttribute("data-reference");
     lightboxReference.textContent = imageRef;
 }
@@ -112,9 +111,7 @@ document.addEventListener("click", function (e) {
 
     // Reference
     const imageRef = div.getAttribute("data-reference");
-    let lightboxReference = lightboxOverlay.querySelector(
-        ".lightbox_reference"
-    );
+    let lightboxReference = lightboxOverlay.querySelector(".lightbox_reference");
     lightboxReference.textContent = imageRef;
 
     // Trouver l'index actuel de 'div' dans la liste des .icon_fullscreen

@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Calling the function to check filters after loading the results
                 checkFiltersAndDisplayDefaultSection();
 
-                // Update Lightbox Elments
+                // Update Lightbox Elements
                 updateLightboxArray();
             }
         };
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Filtering element click handler
     const filterItemsCategory = document.querySelectorAll("#item_category");
     const filterItemsFormat = document.querySelectorAll("#item_format");
-    const filterItemsDate = document.querySelectorAll("#item_date");
+    const filterItemsDate = document.querySelectorAll("#list_items_date li");
     //
     for (let i = 0; i < filterItemsCategory.length; i++) {
         filterItemsCategory[i].addEventListener("click", function () {
@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
             initialFiltersSet = false;
             selectedFilterFormat = this.getAttribute("data-filter");
             loadResults();
+            updateLightboxArray();
         });
     }
     //
@@ -79,8 +80,8 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (filterType === "older") {
                 selectedFilterDate = "Les plus anciennes";
             }
-        
             loadResults();
+            updateLightboxArray();
         });
     }
 });

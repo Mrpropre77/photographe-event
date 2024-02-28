@@ -12,7 +12,7 @@ function enqueue_scripts_js_ajax()
         'ajaxurl' => admin_url('admin-ajax.php'),
     );
     // Localize the script
-    wp_localize_script('ajax-script', 'photos', $translation_array);
+    wp_localize_script('ajax-script', 'photo', $translation_array);
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts_js_ajax');
 /**
@@ -77,7 +77,7 @@ function filter_results()
         echo '<p>Aucun résultat trouvé </p>';
         echo '<p>Pour la catégorie <span>' . $categorie . '</span></p>';
         echo '<p>Au format <span>' . $format . '</span></p>';
-        echo '<p>En date de <span>' . $date . '</span></p>';
+        echo '<p>Pour <span>' . $date . '</span></p>';
         echo '</div>';
     }
 
