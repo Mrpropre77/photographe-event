@@ -142,11 +142,13 @@
 #section_selects .wrapper_select_boxes .list_items_filter .list_item:last-child {
   border-radius: 0 0 8px 8px;
 }
-#section_selects .wrapper_select_boxes .list_item_hover {
+#section_selects .wrapper_select_boxes .list_item_hover,
+#section_selects .wrapper_select_boxes li:hover {
   background: #ffd6d6;
   cursor: pointer;
 }
-#section_selects .wrapper_select_boxes .list_item_pressing {
+#section_selects .wrapper_select_boxes .list_item_pressing,
+#section_selects .wrapper_select_boxes li:active {
   background: #fe5858;
 }
 #section_selects .wrapper_select_boxes .list_item_selected {

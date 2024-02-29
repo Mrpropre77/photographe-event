@@ -125,17 +125,20 @@
                 border-radius: 0 0 8px 8px;
             }
         }
-        .list_item_hover {
+        .list_item_hover,
+        li:hover { 
             background: #ffd6d6;
             cursor: pointer;
         }
-        .list_item_pressing {
+        .list_item_pressing,
+        li:active {
             background: #fe5858;
         }
         .list_item_selected {
             background-color: #e00000;
             color: #fff !important;
         }
+
         .menu_open {
             display: block;
             animation: fadeIn_open_list_items 0.3s ease-in-out;
