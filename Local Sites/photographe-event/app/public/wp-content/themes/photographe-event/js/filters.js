@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.append("action", "filter_results");
         formData.append("categoriies", selectedFilterCategory);
         formData.append("formats", selectedFilterFormat);
-        formData.append("dates", selectedFilterDate);
+        formData.append("date", selectedFilterDate);
 
         xhr.send(formData);
         // During initial loading, check if all filters are empty and hide the default section if necessary
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Filtering element click handler
     const filterItemsCategory = document.querySelectorAll("#item_category");
     const filterItemsFormat = document.querySelectorAll("#item_format");
-    const filterItemsDate = document.querySelectorAll("#list_items_date li");
+    const filterItemsDate = document.querySelectorAll("#item_date");
     //
     for (let i = 0; i < filterItemsCategory.length; i++) {
         filterItemsCategory[i].addEventListener("click", function () {
@@ -67,7 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
             initialFiltersSet = false;
             selectedFilterFormat = this.getAttribute("data-filter");
             loadResults();
-            updateLightboxArray();
         });
     }
     //
@@ -75,13 +74,12 @@ document.addEventListener("DOMContentLoaded", function () {
         filterItemsDate[i].addEventListener("click", function () {
             initialFiltersSet = false;
             let filterType = this.getAttribute("data-filter");
-            if (filterType === "recent") {
-                selectedFilterDate = "Les plus récentes";
-            } else if (filterType === "older") {
-                selectedFilterDate = "Les plus anciennes";
+            if (filterType === "DESC") {
+                selectedFilterDate = "DESC";
+            } else if (filterType === "ASC") {
+                selectedFilterDate = "ASC";
             }
             loadResults();
-            updateLightboxArray();
         });
     }
 });

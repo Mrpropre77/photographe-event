@@ -22,7 +22,7 @@ function filter_results()
 {
     $categorie = isset($_POST['categoriies']) ? sanitize_text_field($_POST['categoriies']) : '';
     $format = isset($_POST['formats']) ? sanitize_text_field($_POST['formats']) : '';
-    $date = isset($_POST['date']) ? sanitize_text_field($_POST['date']) : '';
+    $date = $_POST['date'];
 
     // Define Query Relation
     $tax_query = array('relation' => 'AND');
@@ -45,18 +45,11 @@ function filter_results()
         );
     }
 
-    // check if date exists before adding corresponding taxonomy
-    if ((isset($date)) and ($date != "")) {
-        $tax_query[] = array(
-            'taxonomy' => 'date',
-            'field' => 'slug',
-            'terms' => $date,
-        );
-    }
-
     $args = array(
         'post_type' => 'photos',
         'posts_per_page' => -1,
+        'offset' => $offset,
+        'order' => $date,
         'tax_query' => $tax_query
     );
 
