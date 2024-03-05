@@ -94,7 +94,7 @@ add_action( 'init', 'wpm_custom_post_type', 0 );
 
 add_action( 'init', 'wpm_add_taxonomies', 0 );
 
-//On crée 3 taxonomies personnalisées: Format et Catégorie.
+//On crée 2 taxonomies personnalisées: Format et Catégorie.
 
 function wpm_add_taxonomies() {
 	
