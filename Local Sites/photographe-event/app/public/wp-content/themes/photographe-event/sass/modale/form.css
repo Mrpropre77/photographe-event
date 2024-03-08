@@ -32,6 +32,11 @@
   font-family: "Space Mono";
 }
 
+@media screen and (max-width: 450px) {
+  .wpcf7-form input, .wpcf7-form textarea {
+    width: 150px;
+  }
+}
 .wpcf7-form .wpcf7-submit, .wpcf7-form .has-spinner {
   border-radius: 2px;
   border: none;

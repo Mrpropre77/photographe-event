@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Filtering element click handler
     const filterItemsCategory = document.querySelectorAll("#item_category");
     const filterItemsFormat = document.querySelectorAll("#item_format");
-    const filterItemsDate = document.querySelectorAll(".list_items_filter #item_date li");
+    const filterItemsDate = document.querySelectorAll(".list_items_filter li");
     //
     for (let i = 0; i < filterItemsCategory.length; i++) {
         filterItemsCategory[i].addEventListener("click", function () {

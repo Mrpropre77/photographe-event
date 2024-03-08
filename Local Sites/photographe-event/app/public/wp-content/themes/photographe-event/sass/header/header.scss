@@ -23,7 +23,7 @@
 
         .header_logo_link {
             width: 250px;
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 768px) { 
                 position: absolute;
                 width: 250px;
             }
@@ -141,7 +141,7 @@
 }
 // Menu Mobile
 .header_mobile {
-    position: relative;
+    position: relative; 
     display: none;
     z-index: 1;
     .header_mobile_container {

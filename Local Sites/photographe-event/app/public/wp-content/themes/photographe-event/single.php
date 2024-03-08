@@ -65,6 +65,7 @@
                 </div>
                 <article class="post_other_imgs_container">
                 <?php
+            $categorie = get_the_terms(get_the_ID(), 'categoriies');
             // Post per page
             $post_per_page = 2;
             // Argument definition
@@ -73,6 +74,13 @@
                 'post_type' => 'photos',
                 'posts_per_page' => $post_per_page,
                 'paged' => 1,
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'categoriies',
+                        'field' => 'slug',
+                        'terms' =>  (!empty($categorie)) ? $categorie[0]->slug : '',
+                    ),
+                ),
             );
             // Definition / Execution of wp-query
             $query = new WP_Query($args);
