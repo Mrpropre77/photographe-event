@@ -5,10 +5,6 @@
                 alt="image contact">
         </div>
         <?php
-        $refPhoto = "";
-        if (the_field('reference')) {
-            $refPhoto = the_field('reference');
-        };
         // Shortcode Contact form
         echo do_shortcode('[contact-form-7 id="91dfc8c" title="Contact form 1"]');
         ?>

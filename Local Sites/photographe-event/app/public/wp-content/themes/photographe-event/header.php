@@ -12,7 +12,7 @@
 
     <?php wp_body_open(); ?>
     <main class="main">
-        <header class="header_desktop">
+        <header id="header" class="header_desktop">
             <!-- Assignation du menu principal -->
             <!-- Logo avec lien sur accueil -->
             <a href="<?php echo home_url('/'); ?>" class="header_logo_link">

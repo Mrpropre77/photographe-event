@@ -5,11 +5,11 @@
     bottom: 0;
     width: 100%;
     height: 100%;
-    transition: 300ms;
-    .photo:hover {
-        filter: brightness(0.5);
+    transition: opacity 0.3s ease;
+    .photo img:hover {
+        filter: brightness(0.5); 
     }
-    .icon_eye {
+    .icon_eye { 
         width: 46px;
         height: 32px;
         position: absolute;
@@ -62,5 +62,5 @@
 .photo_block_overlay:hover .icon_fullscreen,
 .photo_block_overlay:hover .text_category,
 .photo_block_overlay:hover .text_reference {
-    opacity: 1;
+    opacity: 1; 
     }

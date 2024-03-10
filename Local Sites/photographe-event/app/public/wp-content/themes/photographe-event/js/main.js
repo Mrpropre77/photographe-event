@@ -145,7 +145,7 @@ const titleBoxDate = document.getElementById("title_box_date");
 const spanTitleDate = document.getElementById("span_title_date");
 const spanIconDate = document.getElementById("span_icon_date");
 const listItemDate = document.getElementById("list_items_date");
-const itemsDate = document.querySelectorAll(".list_items_filter li");
+const itemsDate = document.querySelectorAll(".date");
 titleBoxDate.addEventListener("click", () => {
     titleBoxDate.classList.toggle("title_filter_box_clicked");
     spanIconDate.classList.toggle("span_icon_filter_rotate");

@@ -5,7 +5,7 @@
 add_filter('wpcf7_form_tag', function ($tag) {
     $name = is_object($tag) ? $tag->name : $tag['name'];
 
-    if ('your-reference' === $name) {
+    if ('reference' === $name) {
         global $post;
         $reference_value = get_post_meta($post->ID, 'reference', true); 
 
@@ -19,3 +19,4 @@ add_filter('wpcf7_form_tag', function ($tag) {
     }
     return $tag;
 });
+?>

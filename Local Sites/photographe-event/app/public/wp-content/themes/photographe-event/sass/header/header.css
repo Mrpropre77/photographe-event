@@ -6,6 +6,14 @@
 .main .site__heading {
   color: black;
 }
+.main #header {
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  height: 80px;
+  width: 100vw;
+  z-index: 1;
+}
 .main .header_desktop {
   display: flex;
   justify-content: space-around;
@@ -166,7 +174,7 @@
 }
 .header_mobile .header_mobile_container {
   position: fixed;
-  top: 111px;
+  top: 80px;
   left: 0;
   width: 100%;
   height: 100%;
