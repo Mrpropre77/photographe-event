@@ -1,5 +1,5 @@
 // Front Page Load More Posts
-var front_page;
+var front_page = 1;
 var alreadyDisplayedPosts = [];
 // Add Post IDs -> alreadyDisplayedPosts each load posts
 function updateAlreadyDisplayedFrontPosts() {
@@ -15,11 +15,14 @@ jQuery(function ($) {
     // Call the function Posts IDs
     updateAlreadyDisplayedFrontPosts();
     $("body").on("click", ".btn_load_more", function () {
+        var categorie = $('categoriies').val();
         var data = {
             action: "load_front_posts_by_ajax",
             page: front_page,
             security: photo.security,
+            posts_per_page: photo.posts_per_page,
             exclude: alreadyDisplayedPosts.join(","),
+            categorie: categorie,
         };
 
         $.post(photo.ajaxurl, data, function (response) {

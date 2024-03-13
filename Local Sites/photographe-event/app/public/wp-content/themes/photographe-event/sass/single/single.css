@@ -41,7 +41,7 @@
 }
 #main_single_photo_page .section_post_photos .post_photo_desc .post_photo_desc_content {
   position: absolute;
-  bottom: 259px;
+  bottom: 56px;
 }
 @media screen and (max-width: 1024px) {
   #main_single_photo_page .section_post_photos .post_photo_desc .post_photo_desc_content {
@@ -144,14 +144,16 @@
 }
 #main_single_photo_page .section_post_photos .post_photo_img .photo_block .icon_fullscreen:hover {
   opacity: 1;
+  transition: opacity 0.5s ease;
 }
 #main_single_photo_page .section_post_photos .post_photo_img .photo_block img {
   max-width: 100%;
   height: 100%;
-  -o-object-fit: scale-down;
-     object-fit: scale-down;
+  -o-object-fit: cover;
+     object-fit: cover;
   -o-object-position: 50% 50%;
      object-position: 50% 50%;
+  display: flex;
 }
 @media screen and (max-width: 768px) {
   #main_single_photo_page .section_post_photos .post_photo_img .photo_block img {

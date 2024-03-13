@@ -5,15 +5,28 @@
  */
 function load_more_imgs()
 {
+    
     check_ajax_referer('load_more_posts', 'security');
-
+    // Post per page
+    $post_per_page = 8;
+    $categorie = isset($_POST['categoriies']) ? $_POST['categoriies'] : '';
     $args = array(
         'post_type' => 'photos',
         'post_status' => 'publish',
-        'posts_per_page' => 8,
+        'posts_per_page' => $post_per_page,
         'paged' => $_POST['page'],
         'post__not_in' => explode(',', $_POST['exclude']),
     );
+
+    if (!empty($categorie)) {
+        $args['tax_query'] = array(
+            array(
+                'taxonomy' => 'categoriies',
+                'field'    => 'slug',
+                'terms'    => $categorie,
+            ),
+        );
+    }
     $query_more_imgs = new WP_Query($args);
 ?>
     <?php if ($query_more_imgs->have_posts()) : ?>
@@ -22,6 +35,7 @@ function load_more_imgs()
         ?>
             <!-- Template Post Card -->
             <?php get_template_part('template-parts/photo_block'); ?>
+            
         <?php endwhile; ?>
         <?php wp_reset_postdata(); ?>
     <?php endif; ?>

@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
         <!-- Include Section Hero -->
@@ -13,12 +14,17 @@
             <?php
             // Post per page
             $post_per_page = 8;
+            $categorie = isset($_POST['categoriies']) ? $_POST['categoriies'] : '';
+            if (!empty($categorie) && $categorie === 'categoriies') {
+                $post_per_page = 8;
+            }
             // Argument definition
             $args = array(
                 'orderby' => 'rand',
                 'post_type' => 'photos',
                 'posts_per_page' => $post_per_page,
-                'paged' => 1,
+                'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+                'categoriies' => $categorie,
             );
             // Definition / Execution of wp-query
             $query = new WP_Query($args);
@@ -33,10 +39,10 @@
             wp_reset_postdata() ?>
         </section><!-- section_photo_block_container -->
         <div class="div_btn_load_more">
-            <div class="btn_load_more">
-                <button>Charger Plus</button>
-            </div>
-        </div><!-- .div_btn_load_more -->
+    <div class="btn_load_more">
+        <button id="load-more-button" data-category="<?php echo isset($_POST['categoriies']) ? $_POST['categoriies'] : ''; ?>">Charger Plus</button>
+    </div>
+</div><!-- .div_btn_load_more -->
 
 <?php endwhile;
 endif; ?>

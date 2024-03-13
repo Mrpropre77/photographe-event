@@ -129,4 +129,20 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+.t1 {
+  font-size: large;
+  text-transform: uppercase;
+  margin: 65px 200px;
+}
+
+.t2 {
+  font-weight: 800;
+  font-size: medium;
+  margin: 65px 200px;
+}
+
+.t3 {
+  margin: 65px 200px;
 }/*# sourceMappingURL=reset-css.css.map */

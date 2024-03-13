@@ -5,10 +5,7 @@
     bottom: 0;
     width: 100%;
     height: 100%;
-    transition: opacity 0.3s ease;
-    .photo img:hover {
-        filter: brightness(0.5); 
-    }
+    transition: opacity 0.5s ease;
     .icon_eye { 
         width: 46px;
         height: 32px;
@@ -16,7 +13,6 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        opacity: 0;
         a {
             width: 100%;
             height: 100%;
@@ -33,7 +29,6 @@
         top: 20px;
         right: 20px;
         cursor: pointer;
-        opacity: 0;
     }
     .text_category,
     .text_reference {
@@ -43,11 +38,11 @@
         text-transform: uppercase;
         position: absolute;
         color: #fff;
-        opacity: 0;
     }
 
     a {
         color: #fff;
+        filter: brightness(1);
     }
     .text_reference {
         bottom: 20px;
@@ -58,9 +53,35 @@
         right: 20px; 
     }
 }
+.pic {
+    position: relative; 
+}
+.pic::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.5s ease;
+}
+.pic:hover::after {
+    background-color: rgba(0, 0, 0, 0.5);
+} 
+.photo_block_overlay .icon_eye,
+.photo_block_overlay .icon_fullscreen,
+.photo_block_overlay .text_category,
+.photo_block_overlay .text_reference {
+    opacity: 0;
+    }
+
 .photo_block_overlay:hover .icon_eye,
-.photo_block_overlay:hover .icon_fullscreen,
+.photo_block_overlay:hover .icon_fullscreen, 
 .photo_block_overlay:hover .text_category,
 .photo_block_overlay:hover .text_reference {
     opacity: 1; 
     }
+.photo_block_overlay:hover .pic::after {
+    background-color: rgba(0, 0, 0, 0.5); /* Assombrir l'arrière-plan */
+}
