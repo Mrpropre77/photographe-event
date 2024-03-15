@@ -8,25 +8,14 @@ function load_more_imgs()
     
     check_ajax_referer('load_more_posts', 'security');
     // Post per page
-    $post_per_page = 8;
-    $categorie = isset($_POST['categoriies']) ? $_POST['categoriies'] : '';
+    $post_per_page = -1;
     $args = array(
         'post_type' => 'photos',
         'post_status' => 'publish',
         'posts_per_page' => $post_per_page,
-        'paged' => $_POST['page'],
+        'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
         'post__not_in' => explode(',', $_POST['exclude']),
     );
-
-    if (!empty($categorie)) {
-        $args['tax_query'] = array(
-            array(
-                'taxonomy' => 'categoriies',
-                'field'    => 'slug',
-                'terms'    => $categorie,
-            ),
-        );
-    }
     $query_more_imgs = new WP_Query($args);
 ?>
     <?php if ($query_more_imgs->have_posts()) : ?>

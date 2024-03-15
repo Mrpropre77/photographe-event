@@ -23,10 +23,7 @@ function filter_results()
     $categorie = isset($_POST['categoriies']) ? sanitize_text_field($_POST['categoriies']) : '';
     $format = isset($_POST['formats']) ? sanitize_text_field($_POST['formats']) : '';
     $date = $_POST['date'];
-
-    // Define Query Relation
-    $tax_query = array('relation' => 'AND');
-
+    
     // check if category exists before adding corresponding taxonomy
     if ((isset($categorie)) and ($categorie != "")) {
         $tax_query[] = array(
@@ -48,9 +45,8 @@ function filter_results()
     $args = array(
         'post_type' => 'photos',
         'posts_per_page' => -1,
-        'offset' => $offset,
         'order' => $date,
-        'tax_query' => $tax_query
+        'tax_query' => $tax_query,
     );
 
     $filtered_query = new WP_Query($args);
